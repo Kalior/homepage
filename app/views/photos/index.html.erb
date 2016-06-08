@@ -1,11 +1,13 @@
 
 <p id="notice"><%= notice %></p>
 <div id="Photos" class="container">
-  <% @photos.each do |photo| %>
-    <div class="photo front <%= "has-description" if photo.description && photo.description.size > 0 %>">
-      <%= link_to (image_tag(photo.image.front.url)), photo %>
-      <div class="hover-text"><%= photo.description %></div>
-    </div>
+  <% cache(cache_key_for_photos) do %>
+    <% @photos.each do |photo| %>
+      <div class="photo front <%= "has-description" if photo.description && photo.description.size > 0 %>">
+        <%= link_to (image_tag(photo.image.front.url)), photo %>
+        <div class="hover-text"><%= photo.description %></div>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
