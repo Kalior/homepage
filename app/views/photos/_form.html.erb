@@ -1,0 +1,19 @@
+<%= simple_form_for @photo, html: { multipart: true } do |f| %>
+  <%= f.error_notification %>
+  <div class="row" id="image_upload">
+    <div class="small-12 column">
+      <%= image_tag(@photo.image_url) if @photo.image? %>
+      <%= f.input :image, as: :file %>
+      <%= f.hidden_field :image_cache %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 column">
+      <%= f.input :description, as: :text %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+

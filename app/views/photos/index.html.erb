@@ -1,0 +1,14 @@
+
+<p id="notice"><%= notice %></p>
+<div id="Photos" class="container">
+  <% @photos.each do |photo| %>
+    <div class="photo front <%= "has-description" if photo.description && photo.description.size > 0 %>">
+      <%= link_to (image_tag(photo.image.front.url)), photo %>
+      <div class="hover-text"><%= photo.description %></div>
+    </div>
+  <% end %>
+</div>
+
+<br>
+
+

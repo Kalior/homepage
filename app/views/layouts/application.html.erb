@@ -1,14 +1,39 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Imageapp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%= yield %>
+    <title><%= content_for?(:title) ? yield(:title) : "Joel Gustafsson" %></title>
 
-</body>
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+    <div class="row">
+      <% flash.each do |name, msg| %>
+        <% if msg.is_a?(String) %>
+          <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
+        <% end %>
+      <% end %>
+    </div>
+
+    <div class="row">
+      <div class="left">
+        <div id="sidebar" class="large-3 medium-3 small-12 column header">
+          <h3><%= @me_first.name %></h3>
+          <%= @me_description.html_safe %>
+          <h5><%= link_to 'Photos', photos_path %></h5>
+          <%= yield(:sidebar_left) %>
+        </div>
+      </div>
+      <div class="large-9 medium-9 small-12 column content">
+        <%= yield %>
+      </div>
+    </div>
+
+  </body>
 </html>

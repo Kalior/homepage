@@ -32,6 +32,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Gems for image management
+gem 'carrierwave'
+gem 'mini_magick' #requires 'imagemagick' on your machine
+# Prettyfication
+gem 'foundation-rails'
+gem 'modernizr-rails'
+gem 'font-awesome-rails'
+gem 'simple_form'
+
+# Markup for description
+gem 'github-markup'
+gem 'redcarpet'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
