@@ -1,0 +1,14 @@
+<% content_for :sidebar_left do %>
+  <ul class="menu vertical">
+    <li class='active'><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'Photos', photos_path %></li>
+    <li><%= link_to 'Projects', projects_path %></li>
+  </ul>
+<% end %>
+
+<p id="notice"><%= notice %></p>
+<div class='container'>
+  <% @combined.reverse.each do |item| %>
+    <%= render :partial => item %>
+  <% end %>
+</div>
