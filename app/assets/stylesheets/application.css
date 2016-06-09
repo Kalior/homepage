@@ -70,3 +70,8 @@ a:hover {
   background-color: #fff;
   padding:          10px;
 }
+
+.menu .active > a {
+    color: #fefefe;
+    background: #C6572F;
+}
