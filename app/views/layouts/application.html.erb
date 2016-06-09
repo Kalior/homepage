@@ -12,31 +12,37 @@
   </head>
 
   <body>
-
-    <!-- <div class="row">
-      <% flash.each do |name, msg| %>
-        <% if msg.is_a?(String) %>
-          <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
-        <% end %>
-      <% end %>
-    </div> -->
-
-    <div class="row">
-      <div class="left">
-        <div id="sidebar" class="large-3 medium-3 small-12 column header">
-          <% cache(@me) do %>
-            <h3><%= @me_first.name %></h3>
-            <%= @me_description.html_safe %>
-            <h5><%= link_to 'Photos', photos_path %></h5>
-            <h5><%= link_to 'Projects', projects_path %></h5>
+    <div id="wrapper">
+      <!-- <div class="row">
+        <% flash.each do |name, msg| %>
+          <% if msg.is_a?(String) %>
+            <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
           <% end %>
-          <%= yield(:sidebar_left) %>
+        <% end %>
+      </div> -->
+      <div id="header"></div>
+
+      <div id="content" class="row">
+        <div class="left">
+          <div id="sidebar" class="large-3 medium-3 small-12 column header">
+            <% cache(@me) do %>
+              <h3><%= @me_first.name %></h3>
+              <%= @me_description.html_safe %>
+            <% end %>
+            <%= yield(:sidebar_left) %>
+          </div>
+        </div>
+        <div class="large-9 medium-9 small-12 column content">
+          <%= yield %>
         </div>
       </div>
-      <div class="large-9 medium-9 small-12 column content">
-        <%= yield %>
-      </div>
     </div>
-
+    <% cache('footer') do %>
+      <div id='footer'>
+          <b><%= @me_first.name %></b> | <%= link_to 'Home', root_path %> | <%= link_to 'Photos', photos_path %> | <%= link_to 'Projects', projects_path %>
+          <br>
+          <i class="fa fa-heart" aria-hidden="true"></i> Made using rails, foundation and font awesome. Check them out!
+      </div>
+    <% end %>
   </body>
 </html>
