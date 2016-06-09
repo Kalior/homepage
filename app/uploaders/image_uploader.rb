@@ -23,6 +23,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   process resize_to_fit: [4000, 4000]
+  process :fix_orientation
 
   version :front do
     process resize_to_fit: [600, 600]
@@ -30,6 +31,12 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :thumb do
     process resize_to_fill: [200,200]
+  end
+
+  def fix_orientation
+    manipulate! do |img|
+      img.auto_orient
+    end
   end
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url
