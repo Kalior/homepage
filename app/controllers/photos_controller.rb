@@ -68,6 +68,10 @@ class PhotosController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_photo
       @photo = Photo.find(params[:id])
+      image = EXIFR::JPEG.new(@photo.image.current_path)
+      @exposure = image.exposure_time.to_s
+      @f = image.f_number.to_s
+      @model = image.model
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

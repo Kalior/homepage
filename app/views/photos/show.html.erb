@@ -3,6 +3,11 @@
 <p id="notice"><%= notice %></p>
 <div class="photo">
   <%= image_tag(@photo.image_url) if @photo.image? %>
+  <p>
+    <b>Model</b>: <%= @model %><br>
+    <b>Exposure time</b>: <%= @exposure %><br>
+    <b>F-number</b>: <%= @f %>
+  </p>
 </div>
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Destroy', @photo, method: :delete, data: { confirm: 'Are you sure?' } %> |
