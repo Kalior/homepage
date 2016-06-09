@@ -1,0 +1,31 @@
+// Place all the styles related to the projects controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  display:        flex;
+  flex-flow:      row wrap;
+  align-items:    flex-start;
+  align-content:  space-around;
+}
+
+.project {
+    margin:           auto;
+    box-shadow:       0 1px 2px rgba(0,0,0,.2);
+    border-radius:    3px;
+    background-color: #fff;
+    margin-bottom:    30px;
+    padding:          10px;
+    width:            400px;
+}
+
+.actions {
+  margin-top: 20px;
+}
+.actions .button {
+  margin-bottom: 0px;
+}
+
+a:visited.button {
+  color: #fff;
+}

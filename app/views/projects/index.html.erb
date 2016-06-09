@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<div id='projects' class='container'>
+  <% @projects.each do |project| %>
+    <div class='project'>
+      <h3><%= project.name %></h3>
+      <%= project.description %>
+      <div class='actions'>
+        <div class="button-group">
+          <%= link_to 'Explore', project.link, class: "button"%>
+          <%= link_to 'Source code', project.source_code, class: "button" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
