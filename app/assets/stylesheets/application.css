@@ -61,9 +61,9 @@ a:hover {
 .container {
   display:         flex;
   flex-flow:       row wrap;
-  align-items:     center;
-  justify-content: center;
-  align-content:   center;
+  align-items:     flex-start;
+  justify-content: space-between;
+  align-content:   flex-start;
 }
 
 .right-footer {
