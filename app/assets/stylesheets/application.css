@@ -28,17 +28,11 @@ body {
     background-color: #fff;
     padding:          10px;
     box-sizing:       border-box;
-    height:           100%;
     margin-top:       17px;
 }
 
 #wrapper {
   min-height:     100%;
-}
-
-.left {
-  background-color: #fff;
-  height: 100;
 }
 
 a:hover {
@@ -51,6 +45,10 @@ a:hover {
   border-radius:    3px;
   background-color: #fff;
   padding:          10px;
+}
+
+.menu {
+  font-size: 18px;
 }
 
 .menu .active > a {

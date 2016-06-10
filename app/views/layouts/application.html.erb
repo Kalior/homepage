@@ -23,8 +23,8 @@
       <div id="header"></div>
 
       <div id="content" class="row">
-        <div class="left">
-          <div id="sidebar" class="large-3 medium-3 small-12 column header">
+        <div class="large-3 medium-3 small-12 column">
+          <div id="sidebar">
             <% cache(@me) do %>
               <h3><%= @me_first.name %></h3>
               <%= @me_description.html_safe %>
