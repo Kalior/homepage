@@ -81,6 +81,7 @@ a:hover {
 #footer {
   clear: both;
   background-color: #333;
+  color:            #a4a4a4;
   padding:          10px;
   font-size:        14px;
   position:         relative;
@@ -94,5 +95,5 @@ a:hover {
 }
 
 #footer a {
-  color: #666;
+  color: #a4a4a4;
 }
