@@ -3,11 +3,13 @@
 <p id="notice"><%= notice %></p>
 <div class="photo">
   <%= image_tag(@photo.image_url) if @photo.image? %>
-  <p>
-    <b>Model</b>: <%= @model %><br>
-    <b>Exposure time</b>: <%= @exposure %><br>
-    <b>F-number</b>: <%= @f %>
-  </p>
+  <div class="metadata">
+    <b>Camera model</b>: <%= @model %><br>
+    <b>Exposure time</b>: <%= @exposure %> s<br>
+    <b>F-number</b>: <%= @f %><br>
+    <b>ISO</b>: <%= @iso %><br>
+    <b>Focal length</b>: <%= @focal %> mm
+  </div>
 </div>
 <%= link_to 'Edit', edit_photo_path(@photo) %> |
 <%= link_to 'Destroy', @photo, method: :delete, data: { confirm: 'Are you sure?' } %> |

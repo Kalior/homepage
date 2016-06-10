@@ -72,6 +72,8 @@ class PhotosController < ApplicationController
       @exposure = image.exposure_time.to_s
       @f = image.f_number.to_s
       @model = image.model
+      @iso = image.iso_speed_ratings.to_s
+      @focal = image.focal_length.to_s
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
