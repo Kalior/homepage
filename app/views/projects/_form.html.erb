@@ -4,8 +4,8 @@
   <div class="form-inputs">
     <%= f.input :name %>
     <%= f.input :description %>
-    <%= f.input :link %>
-    <%= f.input :source_code %>
+    <%= f.input :link, as: :url %>
+    <%= f.input :source_code, as: :url %>
   </div>
 
   <div class="form-actions">

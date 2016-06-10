@@ -3,7 +3,7 @@
 <p id="notice"><%= notice %></p>
 
 <div id='projects' class='container'>
-  <% @projects.each do |project| %>
+  <% @projects.reverse.each do |project| %>
     <%= render project %>
   <% end %>
 </div>
