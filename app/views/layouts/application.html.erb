@@ -39,9 +39,15 @@
     </div>
     <% cache('footer') do %>
       <div id='footer'>
-          <b><%= @me_first.name %></b> | <%= link_to 'Home', root_path %> | <%= link_to 'Photos', photos_path %> | <%= link_to 'Projects', projects_path %>
-          <br>
-          <i class="fa fa-heart" aria-hidden="true"></i> Made using rails, foundation and font awesome. Check them out!
+          <div class='left-footer'>
+            <div class='larger'><b><%= @me_first.name %></b> | <%= link_to 'Home', root_path %> | <%= link_to 'Photos', photos_path %> | <%= link_to 'Projects', projects_path %></div>
+            <br>
+            <i style="color:#C6572F"class="fa fa-heart" aria-hidden="true"></i> Created using ruby on rails, foundation and font awesome. Check them out!
+          </div>
+          <div class='right-footer'>
+            <div class='right-footer'><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-licens" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></div>
+            Except where otherwise noted, all images on this site is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>
+          </div>
       </div>
     <% end %>
   </body>

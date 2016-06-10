@@ -27,13 +27,6 @@
   -webkit-filter: brightness(50%) blur(5px);
 }
 
-.container {
-  display:        flex;
-  flex-flow:      row wrap;
-  align-items:    flex-start;
-  align-content:  space-around;
-}
-
 .has-description .hover-text {
   padding:    10px;
   position:   relative;
