@@ -1,0 +1,17 @@
+<%= simple_form_for :session, url: login_path do |f| %>
+  <%= f.error_notification %>
+  <div class="row" id="session_create">
+    <div class="small-12 column">
+      <%= f.input :email %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-12 column">
+      <%= f.input :password %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.button :submit, 'Log in' %>
+  </div>
+<% end %>
+

@@ -13,18 +13,13 @@
 
   <body>
     <div id="wrapper">
-      <!-- <div class="row">
-        <% flash.each do |name, msg| %>
-          <% if msg.is_a?(String) %>
-            <%= content_tag :div, msg, class: "alert-box #{name} radius" %>
-          <% end %>
-        <% end %>
-      </div> -->
-      <div id="header"></div>
-
       <div id="content" class="row">
         <div class="large-3 medium-3 small-12 column">
           <div id="sidebar">
+            <% if current_user %>
+              <%= current_user.name %>
+              <%= link_to "Log out", logout_path, method: "delete" %>
+            <% end %>
             <% cache(@me) do %>
               <h3><%= @me_first.name %></h3>
               <%= @me_description.html_safe %>
