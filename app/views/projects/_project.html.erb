@@ -7,4 +7,8 @@
       <%= link_to '<i class="fa fa-code" aria-hidden="true"></i> Source code <i class="fa fa-code" aria-hidden="true"></i>'.html_safe, project.source_code, class: "button" %>
     </div>
   </div>
+  <% if current_user %>
+    <%= link_to 'Edit', edit_project_path(project) %> |
+    <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 </div>
