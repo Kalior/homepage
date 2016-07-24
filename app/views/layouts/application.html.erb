@@ -16,15 +16,19 @@
       <div id="content" class="row">
         <div class="large-3 medium-3 small-12 column">
           <div id="sidebar">
-            <% if current_user %>
-              <%= current_user.name %>
-              <%= link_to "Log out", logout_path, method: "delete" %>
-            <% end %>
-            <% cache(@me) do %>
-              <h3><%= @me_first.name %></h3>
-              <%= @me_description.html_safe %>
-            <% end %>
-            <%= yield(:sidebar_left) %>
+            <div id='sidebar-top' class='sidebar-content'>
+              <% if current_user %>
+                <%= current_user.name %>
+                <%= link_to "Log out", logout_path, method: "delete" %>
+              <% end %>
+              <% cache(@me) do %>
+                <h3><%= @me_first.name %></h3>
+                <%= @me_description.html_safe %>
+              <% end %>
+            </div>
+            <div class='sidebar-content' >
+              <%= yield(:sidebar_left) %>
+            </div>
           </div>
         </div>
         <div class="large-9 medium-9 small-12 column content">
@@ -37,7 +41,7 @@
           <div class='left-footer'>
             <div class='larger'><b><%= @me_first.name %></b> | <%= link_to 'Home', root_path %> | <%= link_to 'Photos', photos_path %> | <%= link_to 'Projects', projects_path %></div>
             <br>
-            <i style="color:#C6572F"class="fa fa-heart" aria-hidden="true"></i> Created using ruby on rails, foundation and font awesome. Check them out!
+            <i style="color:#C6572F"class="fa fa-heart" aria-hidden="true"></i> Created using <a href='http://rubyonrails.org/'>ruby on rails</a>, <a href='http://foundation.zurb.com/'>foundation</a> and <a href='http://fontawesome.io/'>font awesome</a>. Check them out!
           </div>
           <div class='right-footer'>
             <div class='right-footer'><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-licens" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></div>
