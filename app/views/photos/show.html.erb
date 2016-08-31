@@ -4,11 +4,21 @@
 <div class="photo">
   <%= image_tag(@photo.image_url) if @photo.image? %>
   <div class="metadata">
-    <b>Camera model</b>: <%= @model %><br>
-    <b>Exposure time</b>: <%= @exposure %> s<br>
-    <b>F-number</b>: <%= @f %><br>
-    <b>ISO</b>: <%= @iso %><br>
-    <b>Focal length</b>: <%= @focal %> mm
+    <% if !@model.blank? %>
+      <b>Camera model</b>: <%= @model %><br>
+    <% end %>
+    <% if !@exposure.blank? %>
+      <b>Exposure time</b>: <%= @exposure %> s<br>
+    <% end %>
+    <% if !@f.blank? %>
+      <b>F-number</b>: <%= @f %><br>
+    <% end %>
+    <% if !@iso.blank? %>
+      <b>ISO</b>: <%= @iso %><br>
+    <% end %>
+    <% if !@focal.blank? %>
+      <b>Focal length</b>: <%= @focal %> mm
+    <% end %>
   </div>
 </div>
 <% if current_user %>
