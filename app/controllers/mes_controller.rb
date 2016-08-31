@@ -1,5 +1,6 @@
 class MesController < ApplicationController
   before_action :set_me, only: [:show, :edit, :update, :destroy]
+  before_action :check_user
 
   # GET /mes
   # GET /mes.json
@@ -70,5 +71,11 @@ class MesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def me_params
       params.require(:me).permit(:description, :name)
+    end
+
+    def check_user
+      if !current_user
+        redirect_to root_url
+      end
     end
 end

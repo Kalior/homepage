@@ -21,7 +21,7 @@
                 <%= current_user.name %>
                 <%= link_to "Log out", logout_path, method: "delete" %>
               <% end %>
-              <% cache(@me) do %>
+              <% cache(@me_first) do %>
                 <h3><%= @me_first.name %></h3>
                 <%= @me_description.html_safe %>
               <% end %>
