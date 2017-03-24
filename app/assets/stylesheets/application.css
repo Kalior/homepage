@@ -27,15 +27,6 @@ body {
   background-color: #fff;
   box-sizing:       border-box;
   margin-top:       17px;
-  border-color:     #cdc;
-  border-width:     1px 1px 0px 1px;
-  border-style:     solid;
-}
-
-.sidebar-content {
-  border-color:     #cdc;
-  border-width:     0 0 1px 0;
-  border-style:     solid;
 }
 
 #sidebar-top {
@@ -73,6 +64,8 @@ a:hover {
   align-items:     flex-start;
   justify-content: space-between;
   align-content:   flex-start;
+  background-color: #fff;
+  margin-bottom:    30px;
 }
 
 .right-footer {
@@ -108,4 +101,16 @@ a:hover {
 
 #footer a {
   color: #a4a4a4;
+}
+
+.border {
+  border-color:     #cdc;
+  border-width:     1px 1px 0px 1px;
+  border-style:     solid;
+}
+
+.child-border {
+  border-color:     #cdc;
+  border-width:     0 0 1px 0;
+  border-style:     solid;
 }

@@ -13,10 +13,10 @@
 
   <body>
     <div id="wrapper">
-      <div id="content" class="row">
+      <div id="content">
         <div class="large-3 medium-4 small-12 column">
-          <div id="sidebar">
-            <div id='sidebar-top' class='sidebar-content'>
+          <div id="sidebar" class='border'>
+            <div id='sidebar-top' class='child-border'>
               <% if current_user %>
                 <%= current_user.name %>
                 <%= link_to "Log out", logout_path, method: "delete" %>

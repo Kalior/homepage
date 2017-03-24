@@ -1,6 +1,8 @@
-<div class='project'>
+<div class='project child-border'>
   <h3><%= project.name %></h3>
-  <%= project.description %>
+  <div class="description">
+    <%= project.description %>
+  </div>
   <div class='actions'>
     <div class="button-group expanded">
       <%= link_to 'Explore', project.link, class: "success button"%>
