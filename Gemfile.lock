@@ -93,6 +93,7 @@ GEM
     minitest (5.9.0)
     modernizr-rails (2.7.1)
     multi_json (1.12.1)
+    mysql2 (0.4.4)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -185,6 +186,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   modernizr-rails
+  mysql2
   rails (= 4.2.6)
   redcarpet
   sass-rails (~> 5.0)
