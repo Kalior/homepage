@@ -3,24 +3,40 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .project {
-    margin-left:      auto;
-    margin-right:     auto;
-    background-color: #fff;
-    padding:          10px;
-    width:            100%;
+    width: 100%;
+    display: flex;
 
-    .description {
-      height: 150px;
+    .information {
+      width:    50%;
+      padding:  10px;
+      display: flex;
+      flex-direction: column;
+      align-content: space-between;
     }
-}
+    .project-image {
+      width:    50%;
+    }
+    .description {
+      height: 100%;
+    }
+    .actions {
+      margin-top: 30px;
+      margin-bottom: 0px;
 
-.project .actions {
-  margin-top: 30px;
-  position: relative;
-  margin-bottom: 0px;
-}
-.actions .button-group {
-  margin-bottom: 0px;
+      .button-group {
+        margin-bottom: 0px;
+      }
+    }
+    .left {
+      order: 1;
+    }
+    .right {
+      order: 2;
+    }
+    .admin {
+      order: 4;
+      align-self: flex-end;
+    }
 }
 
 a:visited.button {
