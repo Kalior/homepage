@@ -1,9 +1,9 @@
 <% left = false if local_assigns[:left].nil? %>
 <div class='project child-border'>
-  <div class="project-image <%= left ? 'left' : 'right' %>">
+  <div class="project-row <%= left ? 'left' : 'right' %>">
     <%= image_tag project.image.front.url %>
   </div>
-  <div class="information <%= left ? 'right' : 'left' %>">
+  <div class="information project-row <%= left ? 'right' : 'left' %>">
     <h3><%= project.name %></h3>
     <div class="description">
       <%= project.description %>
