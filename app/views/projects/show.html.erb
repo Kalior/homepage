@@ -1,29 +1,5 @@
 <%= render 'sidebar' %>
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @project.link %>
-</p>
-
-<p>
-  <strong>Source code:</strong>
-  <%= @project.source_code %>
-</p>
-
-<% if current_user %>
-  <%= link_to 'Edit', edit_project_path(@project) %> |
-  <%= link_to 'Destroy', @project, method: :delete, data: { confirm: 'Are you sure?' } %> |
-  <%= link_to 'Back', projects_path %>
-<% end %>
+<div class="container">
+  <%= render @project %>
+</div>
