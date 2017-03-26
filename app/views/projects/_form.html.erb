@@ -6,6 +6,9 @@
     <%= f.input :description %>
     <%= f.input :link, as: :url %>
     <%= f.input :source_code, as: :url %>
+    <%= image_tag(@project.image_url) if @project.image? %>
+    <%= f.input :image, as: :file %>
+    <%= f.hidden_field :image_cache %>
   </div>
 
   <div class="form-actions">
