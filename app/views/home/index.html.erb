@@ -8,7 +8,7 @@
 
 <p id="notice"><%= notice %></p>
 <div class='container border'>
-  <% @combined.each do |item| %>
-    <%= render :partial => item %>
+  <% @combined.each_with_index do |item, i| %>
+    <%= render partial: item.to_partial_path, locals: {photo: item, project: item, left: (i % 2) == 0} %>
   <% end %>
 </div>

@@ -3,8 +3,8 @@
 <p id="notice"><%= notice %></p>
 
 <div id='projects' class='container'>
-  <% @projects.reverse.each do |project| %>
-    <%= render project %>
+  <% @projects.reverse.each_with_index do |project, i| %>
+    <%= render partial: "project", locals: {project: project, left: i % 2 == 0} %>
   <% end %>
 </div>
 
