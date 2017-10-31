@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :photo_collections
   get    'login'   => 'session#new'
   post   'login'   => 'session#create'
   delete 'logout'  => 'session#destroy'
@@ -8,5 +9,6 @@ Rails.application.routes.draw do
   resources :mes
   resources :photos
   resources :home
+  resources :photo_collections
   root 'home#index'
 end

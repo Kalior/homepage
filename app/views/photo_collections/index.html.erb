@@ -1,0 +1,5 @@
+<%= render partial: 'layouts/sidebar', locals: {photos_active: true} %>
+
+<% @photo_collections.each do |photo_collection| %>
+  <%= render photo_collection %>
+<% end %>
