@@ -1,4 +1,5 @@
 require 'carrierwave/orm/activerecord'
+require 'exifr/jpeg'
 
 class PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
