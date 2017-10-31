@@ -3,40 +3,12 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .photo {
-    margin-left:      auto;
-    margin-right:     auto;
-    border-radius:    3px;
-    max-width:        72%;
+  max-width: 100%;
 
-    img {
-      width: 100%;
-    }
-}
-
-.has-description img {
-  -webkit-transition: all 1s ease;
-     -moz-transition: all 1s ease;
-       -o-transition: all 1s ease;
-      -ms-transition: all 1s ease;
-          transition: all 1s ease;
-}
-
-.has-description img:hover {
-  -webkit-filter: brightness(50%) blur(5px);
-}
-
-.has-description .hover-text {
-  padding:    10px;
-  position:   relative;
-  bottom:     30px;
-  left:       0px;
-  display:    none;
-  visibility: hidden;
-  color:      white;
-}
-
-.has-description:hover .hover-text {
-  visibility: visible;
+  img {
+    width: 100%;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 1);
+  }
 }
 
 .metadata {
