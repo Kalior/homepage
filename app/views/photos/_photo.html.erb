@@ -1,4 +1,4 @@
-<div class="photo child-border <%= "has-description" if photo.description && photo.description.size > 0 %>">
+<div class="photo item">
   <%= link_to (image_tag(photo.image.front.url)), photo %>
   <% if current_user %>
     <%= link_to 'Edit', edit_photo_path(photo) %> |

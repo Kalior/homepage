@@ -1,14 +1,9 @@
-<%= render 'sidebar' %>
+<%= render partial: 'layouts/sidebar', locals: {photos_active: true} %>
 
-<p id="notice"><%= notice %></p>
-<div id="Photos" class="container">
-  <% cache(cache_key_for_photos) do %>
-    <% @photos.reverse.each do |photo| %>
-      <div class="photo front <%= "has-description" if photo.description && photo.description.size > 0 %>">
-        <%= link_to (image_tag(photo.image.front.url)), photo %>
-      </div>
-    <% end %>
+<% cache(cache_key_for_photos) do %>
+  <% @photos.reverse.each do |photo| %>
+    <div class="photo front">
+      <%= link_to (image_tag(photo.image.front.url)), photo %>
+    </div>
   <% end %>
-</div>
-
-
+<% end %>

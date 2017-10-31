@@ -1,10 +1,6 @@
-<%= render 'sidebar' %>
+<%= render partial: 'layouts/sidebar', locals: {projects_active: true} %>
 
-<p id="notice"><%= notice %></p>
-
-<div id='projects' class='container'>
-  <% @projects.reverse.each_with_index do |project, i| %>
-    <%= render partial: "project", locals: {project: project, left: i % 2 == 0} %>
-  <% end %>
-</div>
+<% @projects.reverse.each_with_index do |project, i| %>
+  <%= render partial: "project", locals: {project: project, left: i % 2 == 0} %>
+<% end %>
 
