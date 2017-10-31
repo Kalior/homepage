@@ -1,0 +1,22 @@
+<div class="item photo-collection">
+  <% unless photo_collection.title.blank? %>
+    <div class="photo-collection-title-container">
+      <h3 class="photo-collection-title">
+        <%= photo_collection.title %>
+      </h3>
+    </div>
+  <% end %>
+
+  <div class="photo-collection">
+    <% if photo_collection.photos.length == 1 %>
+      <% photo = photo_collection.photos[0] %>
+      <%= link_to (image_tag(photo.image.front.url)), photo %>
+    <% else %>
+      <% photo_collection.photos.each do |photo| %>
+        <div class="collection-item">
+          <%= link_to (image_tag(photo.image.front.url)), photo %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

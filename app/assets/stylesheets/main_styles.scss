@@ -1,0 +1,130 @@
+body {
+  font-family: "Lucida Console";
+  background-color: #E4EFE4;
+  color: #666;
+}
+
+#sidebar {
+  border-radius:    3px;
+  background-color: #fff;
+  margin-right:     20px;
+  margin-bottom:    20px;
+
+  border-color: #cdc;
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+
+  max-width: 300px;
+}
+
+#sidebar-top {
+  padding: 10px;
+  border-width: 0px 0px 1px 0px;
+  border-style: solid;
+  border-color: #cdc;
+}
+
+.item {
+  margin-bottom: 20px;
+  max-width: 1200px;
+}
+
+#wrapper {
+  margin: 20px;
+  margin-bottom: 4em;
+  min-height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  @media (max-width: 800px) {
+    flex-flow: column nowrap;
+  }
+  @media (min-width: 800px) {
+    flex-flow: row wrap;
+
+    & > :nth-child(2) {
+      max-width: 75%;
+    }
+  }
+
+}
+
+#main-container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+a {
+  color: #666;
+  &:visited {
+    color: #666;
+  }
+
+  &:hover {
+    color: #C6572F;
+    background-color: #ddd;
+  }
+}
+
+
+.form {
+  box-shadow:       0 1px 2px rgba(0,0,0,.2);
+  border-radius:    3px;
+  background-color: #fff;
+  padding:          10px;
+}
+
+.menu {
+  font-size: 18px;
+}
+
+.menu .active > a {
+    color: #fefefe;
+    background: #C6572F;
+}
+
+.container {
+  display:         flex;
+  flex-flow:       row wrap;
+  align-items:     flex-start;
+  justify-content: space-between;
+  align-content:   flex-start;
+  background-color: #fff;
+  margin-bottom:    30px;
+}
+
+.right-footer {
+  float: right;
+  max-width: 500px;
+}
+
+.larger {
+  display: inline;
+  font-size: 20px;
+}
+
+.left-footer {
+  float: left;
+}
+
+#footer {
+  clear: both;
+  background-color: #333;
+  color:            #a4a4a4;
+  padding:          10px;
+  font-size:        14px;
+  position:         relative;
+  bottom:           0;
+  width:            100%;
+  overflow:         hidden;
+  margin-top:       -4em;
+
+  a:hover {
+    background-color: #333;
+    color:            #C6572F;
+  }
+
+  a {
+    color: #a4a4a4;
+  }
+}

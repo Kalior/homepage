@@ -1,0 +1,10 @@
+<% home_active = false if home_active.nil? %>
+<% photos_active = false if photos_active.nil? %>
+<% projects_active = false if projects_active.nil? %>
+<% content_for :sidebar_left do %>
+  <ul class="menu vertical">
+    <li class=<%= home_active ? 'active' : '' %>><%= link_to 'Home', root_path %></li>
+    <li class=<%= photos_active ? 'active' : '' %> ><%= link_to 'Photos', photo_collections_path %></li>
+    <li class=<%= projects_active ? 'active' : '' %>><%= link_to 'Projects', projects_path %></li>
+  </ul>
+<% end %>

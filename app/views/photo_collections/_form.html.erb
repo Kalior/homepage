@@ -1,0 +1,11 @@
+<%= simple_form_for(@photo_collection) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :title %>
+
+  <%= f.collection_check_boxes(:photo_ids, Photo.all, :id, :id) do | photo | %>
+    <%= photo.label { photo.check_box + image_tag(photo.object.image.thumb.url) } %>
+  <% end %>
+
+  <%= f.button :submit %>
+<% end %>

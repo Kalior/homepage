@@ -1,5 +1,5 @@
-<% left = false if local_assigns[:left].nil? %>
-<div class='project child-border'>
+<% left = false if left.nil? %>
+<div class='project item'>
   <div class="project-row <%= left ? 'left' : 'right' %>">
     <%= image_tag project.image.front.url %>
   </div>

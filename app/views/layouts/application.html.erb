@@ -13,41 +13,27 @@
 
   <body>
     <div id="wrapper">
-      <div id="content">
-        <div class="large-3 medium-4 small-12 column">
-          <div id="sidebar" class='border'>
-            <div id='sidebar-top' class='child-border'>
-              <% if current_user %>
-                <%= current_user.name %>
-                <%= link_to "Log out", logout_path, method: "delete" %>
-              <% end %>
-              <% cache(@me_first) do %>
-                <h3><%= @me_first.name %></h3>
-                <%= @me_description.html_safe %>
-              <% end %>
-            </div>
-            <div class='sidebar-content' >
-              <%= yield(:sidebar_left) %>
-            </div>
-          </div>
+      <div id="sidebar" class='border'>
+        <div id='sidebar-top' class='child-border'>
+          <% if current_user %>
+            <%= current_user.name %>
+            <%= link_to "Log out", logout_path, method: "delete" %>
+          <% end %>
+          <% cache(@me_first) do %>
+            <h3><%= @me_first.name %></h3>
+            <%= @me_description.html_safe %>
+          <% end %>
         </div>
-        <div class="large-9 medium-8 small-12 column content">
-          <%= yield %>
+        <div class='sidebar-content' >
+          <%= yield(:sidebar_left) %>
         </div>
+      </div>
+      <div id='main-container'>
+        <%= yield %>
       </div>
     </div>
     <% cache('footer') do %>
-      <div id='footer'>
-          <div class='left-footer'>
-            <div class='larger'><b><%= @me_first.name %></b> | <%= link_to 'Home', root_path %> | <%= link_to 'Photos', photos_path %> | <%= link_to 'Projects', projects_path %></div>
-            <br>
-            <i style="color:#C6572F"class="fa fa-heart" aria-hidden="true"></i> Created using <a href='http://rubyonrails.org/'>ruby on rails</a>, <a href='http://foundation.zurb.com/'>foundation</a> and <a href='http://fontawesome.io/'>font awesome</a>. Check them out!
-          </div>
-          <div class='right-footer'>
-            <div class='right-footer'><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons-licens" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a></div>
-            Except where otherwise noted, all images on this site are licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International Licence</a>
-          </div>
-      </div>
+      <%= render 'layouts/footer' %>
     <% end %>
   </body>
 </html>
